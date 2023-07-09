@@ -485,18 +485,26 @@ color: var(--primary-whitef-color);
 margin-bottom: 16px;
 }
 .footer-form {
+    display: flex;
+    gap: 24px;
 }
 .footer-label {
-    margin-right: 24px;
 }
 .footer-input {
     padding: 8px 16px;
-    background-color: var(--primary-navyblue-color);
+    background-color: transparent;
     color: var(--primary-whitef-color);
+
+    width: 264px;
+    height: 40px;
+    
+    font-size: 12px; 
+    line-height: 1.5;
+    letter-spacing: 0.04em;
 
     border-radius: 4px;
 border: 1px solid var(--primary-whitef-color);
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 border-color: var(--primary-whitef-color);
 }
 .footer-input::placeholder {
@@ -506,10 +514,9 @@ line-height: 24px;
 letter-spacing: 0.48px;
 }
 .footer-button {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
     padding: 8px 24px;
 
     font-size: 16px;
@@ -534,6 +541,7 @@ letter-spacing: 0.48px;
     background: var(--primary-ocean-color);
 }
 .footer-email-icon {
+    margin-left: 16px;
 }
 
 /* Button section */
@@ -546,7 +554,7 @@ letter-spacing: 0.48px;
     display: flex;
     justify-content: center;
     gap: 24px;
-    margin-bottom: 72px
+    margin-bottom: 72px;
 
 }
 .button-item {
@@ -678,6 +686,8 @@ color: var(--brand-color);
     min-height: 584px;
     background-color: var(--primary-modal-window-color);
 
+    padding: 72px 24px 24px 24px;
+
     border-radius: 4px;
 
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -719,27 +729,34 @@ color: var(--brand-color);
 .modal-caption {
     display: block;
     width: 360px;
-    margin-top: 72px;
-    margin-right: 24px;
-    margin-left: 24px;
     margin-bottom: 16px;
     text-align: center;
 
 font-size: 16px;
 font-weight: 500;
-line-height: 24px;
-letter-spacing: 0.32px;
+line-height: 1.5;
+letter-spacing: 0.02em;
 color: var(--primary-navyblue-color);
 }
 .modal-form {
     max-width: 360px;
-    margin: 0 24px;
 }
-.modal-label {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+.div-input {
     margin-bottom: 8px;
+}
+
+.modal-label {
+    display: block;
+    
+    
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+
+    color: var(--primary-light-slate-color);
+
+    margin-bottom: 4px;
+    
 
 
 }
@@ -754,17 +771,21 @@ letter-spacing: 0.48px;
 color: var(--primary-light-slate-color);
 
 }
+.div-input-icon {
+    position: relative;
+}
 .modal-input {
     width: 100%;
     height: 40px;
-    padding: 11px 38px;
+    padding-left: 38px;
 
     font-size: 18px;
 
     outline: transparent;
     border-radius: 4px;
-border: 1px solid  rgba(46, 47, 66, 0.40);
-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -776,17 +797,19 @@ transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .modal-input-icon {
     position: absolute;
     left: 16px;
-    bottom: 8px;
+    top:50%;
+    transform: translateY(-50%);
     fill: var(--primary-navyblue-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-input:focus + .modal-input-icon {
     fill: var(--primary-blue-color);
 
 }
+.div-comment {
+    margin-bottom: 16px;
+}
 .modal-input-comment {
-    display: block;
-    
     width: 100%;
     height: 120px;
     padding: 8px 16px;
@@ -795,12 +818,14 @@ transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     outline: transparent;
 
     font-size: 12px;
-    letter-spacing: 0.48px;
-    color: currentColor;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
 
     border-radius: 4px;
-    border: 1px solid rgba(46, 47, 66, 0.40);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 .modal-input-comment:focus {
@@ -814,46 +839,44 @@ color: rgba(46, 47, 66, 0.4);
 
 }
 /* Agreement block */
-.modal-form-agreement {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.div-input-privacy{
     margin-bottom: 24px;
 }
-.modal-form-checkbox:checked {
 
+.modal-label-agreament {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--primary-light-slate-color);
+    user-select: none;
 }
-.modal-form-checkbox-style {
-    display: flex;
+.modal-agreament-icon {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    fill: transparent;
+
     width: 16px;
     height: 16px;
+    margin-right: 8px;
 
+    border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 2px;
-border: 1px solid  rgba(46, 47, 66, 0.40);
 
-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-form-checkbox:checked + .modal-form-checkbox-style{
-    border-color: var(--primary-ocean-color);
-    background-color: var(--primary-ocean-color);
-} 
-
-.modal-form-checkbox-icon {
+.modal-agreament-icon-style {
     opacity: 0;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.modal-form-checkbox:checked + .modal-form-checkbox-style > .modal-form-checkbox-icon {
-    opacity: 1;
 }
-.modal-form-agreement-text {
-    font-size: 12px;
-line-height: 14px;
-letter-spacing: 0.48px;
-    color:var(--primary-light-slate-color);
-    user-select: none;
+.modal-agreament:checked + .modal-label-agreament > .modal-agreament-icon{
+    background-color: var(--primary-ocean-color);
+    border: none;
+    fill: var(--primary-white-color);
+    
+}
+.modal-agreament:checked + .modal-label-agreament > .modal-agreament-icon > .modal-agreament-icon-style {
+    opacity: 1;
 }
 .modal-form-link {
     color: var(--primary-blue-color);
@@ -861,7 +884,7 @@ letter-spacing: 0.48px;
 }
 .modal-submit-button {
     display: block;
-    width: 169px;
+    min-width: 169px;
     height: 56px;
     padding: 16px 32px;
     font-size: 16px;
