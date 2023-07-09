@@ -435,6 +435,7 @@ min-height: 72px;
 }
 .div-footer-icon {
     width: 208px;
+    margin-right: 80px;
 }
 .footer-icon-content {
     font-size: 16px;
@@ -480,10 +481,13 @@ font-weight: 500;
 line-height: 24px;
 letter-spacing: 0.32px;
 color: var(--primary-whitef-color);
+
+margin-bottom: 16px;
 }
 .footer-form {
 }
 .footer-label {
+    margin-right: 24px;
 }
 .footer-input {
     padding: 8px 16px;
@@ -502,10 +506,16 @@ line-height: 24px;
 letter-spacing: 0.48px;
 }
 .footer-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 24px;
+
     font-size: 16px;
-font-weight: 500;
-line-height: 24px;
-letter-spacing: 0.64px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.64px;
 
     min-width: 165px;
     height: 40px;
@@ -516,6 +526,14 @@ letter-spacing: 0.64px;
     background-color: var(--primary-blue-color);
     color: var(--primary-whitef-color);
 
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.footer-button:hover,
+.footer-button:focus {
+    background: var(--primary-ocean-color);
+}
+.footer-email-icon {
 }
 
 /* Button section */
@@ -696,6 +714,7 @@ color: var(--brand-color);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
+
 /* Modal form */
 .modal-caption {
     display: block;
@@ -857,4 +876,9 @@ border-radius: 4px;
 background: var(--primary-blue-color);
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 margin: 0 auto;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-submit-button:hover,
+.modal-submit-button:focus {
+    background: var(--primary-ocean-color);
 }
